@@ -34,7 +34,7 @@ def jouer_son(fichier_audio):
         pygame.mixer.music.load(fichier_audio)
         pygame.mixer.music.play()
         while pygame.mixer.music.get_busy():  # Attendre la fin du son
-            pygame.time.wait(1)  # Attendre 50ms entre chaque vérification
+            pygame.time.wait(1)  # Attendre 
 
 # Fonction pour jouer un son dans un thread
 def jouer_son_dans_thread(fichier_audio):
@@ -73,7 +73,6 @@ while running:
         button_color = LIGHT_RED 
     else:
         button_color = RED
-
     draw_button(screen, button_color, button_rect, "clic_bouton")
 
     # Gestion des événements
