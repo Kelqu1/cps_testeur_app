@@ -1,8 +1,8 @@
 #cps testeur
-
 import pygame
 import threading
 import time
+import os
 
 #parametrage jeu/fenetre
 pygame.init()
@@ -21,12 +21,15 @@ chrono_start = None
 font = pygame.font.Font(None, 36)
 nb_clics = 0
 
-#para son
-son_lock = threading.Lock()
-son_clic_souris = "ressources/clic_souris.mp3"
+#declaration des chemins
+repertoire_du_projet = os.path.dirname(os.path.abspath(__file__))
 
-#para icone
-icon = pygame.image.load("ressources/curseur_en_feu.ico")
+son_clic_souris = os.path.join(repertoire_du_projet, "ressources", "clic_souris.mp3")
+icon_path = os.path.join(repertoire_du_projet, "ressources", "curseur_en_feu.ico")
+
+#parametres
+son_lock = threading.Lock()
+icon = pygame.image.load(icon_path)
 pygame.display.set_icon(icon)
 
 def jouer_son(fichier_audio):
